@@ -8,7 +8,7 @@ export item_menu_install_wps="Установить Wps-Office (305Mb)"
 export item_menu_install_yandex="Установить Yandex-Browser-Stable (130MB)"
 export item_menu_install_remina="Установить Remmina (2.8Mb)" 
 export item_menu_install_armgs="Установить АРМ ГС (145Mb)" 
-export item_menu_install_vipnet="Установить Vipnet Client 4.15.0 GUI(41.86Mb)" 
+export item_menu_install_vipnet="Установить Vipnet Client 4.15.0 GUI (41.86Mb)" 
 export item_menu_install_apps=( 
 "\"$item_menu_install_myoffice\""
 "\"$item_menu_install_crypto1290\""     
