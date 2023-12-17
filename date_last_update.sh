@@ -1,1 +1,1 @@
-date_last_update=15.11.2023;
+date_last_update=17.12.2023;
