@@ -98,12 +98,7 @@ source $path_events/event_item_menu_information_freeipa.sh
 ##########----------"Драйвера для принтеров"----------##########
 source $path_events/event_item_menu_information_pomogator.sh
 
-##########----------"Действия с AldPro"----------##########
-source $path_events/event_item_menu_information_aldpro.sh
-
 source $path_install_functions/install_telegram.sh
-
-source $path_install_functions/install_master-pdf-editor.sh
 
 source $path_install_functions/install_remmina.sh
 
@@ -111,17 +106,15 @@ source $path_install_functions/install_myoffice.sh
 
 source $path_install_functions/install_crypto1290.sh
 
-source $path_install_functions/install_finereader.sh
-
 source $path_install_functions/install_whatsapp.sh
 
 source $path_install_functions/install_wps.sh
 
-source $path_install_functions/install_notepad.sh
-
 source $path_install_functions/install_yandex.sh
 
 source $path_install_functions/install_armgs.sh
+
+source $path_install_functions/install_freeipa.sh
 ###########################################################################################
 ############################## КОНЕЦ БЛОКА event_item_menu ################################
 ###########################################################################################
@@ -209,11 +202,6 @@ freeipa(){
     # убрать выбор доменов доверительных отношений, но воможность через user@domain останется
     # echo $passwd | sudo -S chmod -x /etc/domains.list.d/astra-freeipa-domains-ctl
 }
-
-aldpro_install() {
-	fly-term -e "sudo /opt/aitekinfo/install_functions/install_aldpro.sh"
-}
-
 
 ##########----------"Сетевые репозитории РЦИТ"----------##########
 repo_rcit(){
