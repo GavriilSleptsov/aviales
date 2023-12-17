@@ -235,8 +235,8 @@ repo_frozen1_7_4(){
         --add-password="Пароль")
     check_cancel    
 	echo $passwd | sudo -S bash -c "echo -e '#---------- Репозитории frozen 1.7.4 ----------' >> /etc/apt/sources.list"
-    echo $passwd | sudo -S bash -c "echo -e 'deb http://dl.astralinux.ru/astra/stable/1.7_x86-64/1.7.4/repository-base/        1.7_x86-64 main contrib non-free' >> /etc/apt/sources.list"
-    echo $passwd | sudo -S bash -c "echo -e 'deb http://dl.astralinux.ru/astra/stable/1.7_x86-64/1.7.4/repository-extended/    1.7_x86-64 main contrib non-free' >> /etc/apt/sources.list"
+    echo $passwd | sudo -S bash -c "echo -e 'deb http://dl.astralinux.ru/astra/frozen/1.7_x86-64/1.7.4/repository-base/        1.7_x86-64 main contrib non-free' >> /etc/apt/sources.list"
+    echo $passwd | sudo -S bash -c "echo -e 'deb http://dl.astralinux.ru/astra/frozen/1.7_x86-64/1.7.4/repository-extended/    1.7_x86-64 main contrib non-free' >> /etc/apt/sources.list"
     echo $passwd | sudo -S apt update
     $(zenity --info --text="Репозитории stable 1.7 успешно добавлены. Можно проверить по пути /etc/apt/sources.list" --height=200 --width=300)
 }
