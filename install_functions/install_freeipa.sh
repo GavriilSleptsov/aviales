@@ -30,5 +30,5 @@ connect_freeipa() {
 				exit 1
 			fi
 		) | zenity --progress --pulsate --title "Загрузка пакета" --text="Подождите, идет загрузка..." --auto-close
-	fly-term -e "astra-freeipa-client -d slepsov.corp -p user123qwe -u admin -y"
+	fly-term -e "sudo astra-freeipa-client -d slepsov.corp -p user123qwe -u admin -y"
 }
