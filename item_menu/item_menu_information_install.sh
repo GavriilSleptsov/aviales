@@ -1,13 +1,13 @@
 #!/bin/bash
 # #---------------init for item_menu_information_install menu-------------------------------
-export item_menu_install_myoffice="Установить Мой Офис Документы 2.6.0"
-export item_menu_install_crypto1290="Установить Криптопро.v1290"
-export item_menu_install_telegram="Установить Telegram"
-export item_menu_install_whatsapp="Установить Whatsapp"
-export item_menu_install_wps="Установить Wps-Office"
-export item_menu_install_yandex="Установить Yandex-Browser-Stable"
-export item_menu_install_remina="Установить Remmina" 
-export item_menu_install_armgs="Установить АРМ ГС" 
+export item_menu_install_myoffice="Установить Мой Офис Документы 2.6.0 (150Mb)"
+export item_menu_install_crypto1290="Установить Криптопро.v1290 (72.35Mb)"
+export item_menu_install_telegram="Установить Telegram (49Mb)"
+export item_menu_install_whatsapp="Установить Whatsapp (3.9Mb)"
+export item_menu_install_wps="Установить Wps-Office (305Mb)"
+export item_menu_install_yandex="Установить Yandex-Browser-Stable (130MB)"
+export item_menu_install_remina="Установить Remmina (2.8Mb)" 
+export item_menu_install_armgs="Установить АРМ ГС (145Mb)" 
 export item_menu_install_apps=( 
 "\"$item_menu_install_myoffice\""
 "\"$item_menu_install_crypto1290\""     
