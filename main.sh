@@ -226,23 +226,17 @@ repo_rcit(){
 	echo $passwd | sudo -S bash -c "echo -e 'deb [arch=amd64] http://10.50.1.53/repo/repository-update/   1.7_x86-64 main contrib non-free' >> /etc/apt/sources.list"
 	echo $passwd | sudo -S bash -c "echo -e 'deb [arch=amd64] http://10.50.1.53/repo/repository-base/     1.7_x86-64 main contrib non-free' >> /etc/apt/sources.list"
 	echo $passwd | sudo -S bash -c "echo -e 'deb [arch=amd64] http://10.50.1.53/repo/repository-extended/ 1.7_x86-64 main contrib non-free' >> /etc/apt/sources.list"
-	echo $passwd | sudo -S bash -c "echo -e 'deb [arch=amd64] http://10.50.1.53/repo/repository-extended/ 1.7_x86-64 astra-ce' >> /etc/apt/sources.list"
-	echo $passwd | sudo -S bash -c "echo -e 'deb [arch=amd64] http://10.50.1.53/repo/repository-main/     1.7_x86-64 main contrib non-free' >> /etc/apt/sources.list"
-	echo $passwd | sudo -S bash -c "echo -e 'deb [arch=amd64] http://10.50.1.53/astraad ./' >> /etc/apt/sources.list"
     echo $passwd | sudo -S apt update
     $(zenity --info --text="Репозитории РЦИТ успешно добавлены. Можно проверить по пути /etc/apt/sources.list" --height=200 --width=300)
 }
-repo_stable1_7(){
+repo_frozen1_7_4(){
     passwd=$(zenity --forms --title="Пароль для администратора" \
         --text="Введите пароль администратора" \
         --add-password="Пароль")
     check_cancel    
-	echo $passwd | sudo -S bash -c "echo -e '#---------- Репозитории stable 1.7 ----------' >> /etc/apt/sources.list"
-    echo $passwd | sudo -S bash -c "echo -e 'deb [arch=amd64] https://dl.astralinux.ru/astra/stable/1.7_x86-64/repository-base/        1.7_x86-64 main contrib non-free' >> /etc/apt/sources.list"
-    echo $passwd | sudo -S bash -c "echo -e 'deb [arch=amd64] https://dl.astralinux.ru/astra/stable/1.7_x86-64/repository-main/        1.7_x86-64 main contrib non-free' >> /etc/apt/sources.list"
-    echo $passwd | sudo -S bash -c "echo -e 'deb [arch=amd64] https://dl.astralinux.ru/astra/stable/1.7_x86-64/repository-update/      1.7_x86-64 main contrib non-free' >> /etc/apt/sources.list"
-    echo $passwd | sudo -S bash -c "echo -e 'deb [arch=amd64] https://dl.astralinux.ru/astra/stable/1.7_x86-64/repository-extended/    1.7_x86-64 main contrib non-free' >> /etc/apt/sources.list"
-    echo $passwd | sudo -S bash -c "echo -e 'deb [arch=amd64] https://dl.astralinux.ru/astra/stable/1.7_x86-64/uu/last/repository-base 1.7_x86-64 main contrib non-free' >> /etc/apt/sources.list"
+	echo $passwd | sudo -S bash -c "echo -e '#---------- Репозитории frozen 1.7.4 ----------' >> /etc/apt/sources.list"
+    echo $passwd | sudo -S bash -c "echo -e 'deb http://dl.astralinux.ru/astra/stable/1.7_x86-64/1.7.4/repository-base/        1.7_x86-64 main contrib non-free' >> /etc/apt/sources.list"
+    echo $passwd | sudo -S bash -c "echo -e 'deb http://dl.astralinux.ru/astra/stable/1.7_x86-64/1.7.4/repository-extended/    1.7_x86-64 main contrib non-free' >> /etc/apt/sources.list"
     echo $passwd | sudo -S apt update
     $(zenity --info --text="Репозитории stable 1.7 успешно добавлены. Можно проверить по пути /etc/apt/sources.list" --height=200 --width=300)
 }
@@ -252,10 +246,8 @@ repo_frozen1_7_3(){
         --add-password="Пароль")    
     check_cancel
 	echo $passwd | sudo -S bash -c "echo -e '#---------- Репозитории frozen 1.7.3 ----------' >> /etc/apt/sources.list"
-    echo $passwd | sudo -S bash -c "echo -e 'deb https://dl.astralinux.ru/astra/frozen/1.7_x86-64/1.7.3/repository-base/          1.7_x86-64 main contrib non-free' >> /etc/apt/sources.list"
-    echo $passwd | sudo -S bash -c "echo -e 'deb https://dl.astralinux.ru/astra/frozen/1.7_x86-64/1.7.3/repository-extended/      1.7_x86-64 main contrib non-free ' >> /etc/apt/sources.list"
-    echo $passwd | sudo -S bash -c "echo -e 'deb https://dl.astralinux.ru/astra/frozen/1.7_x86-64/1.7.3/uu/2/repository-base/     1.7_x86-64 main contrib non-free ' >> /etc/apt/sources.list"
-    echo $passwd | sudo -S bash -c "echo -e 'deb https://dl.astralinux.ru/astra/frozen/1.7_x86-64/1.7.3/uu/2/repository-extended/ 1.7_x86-64 main contrib non-free' >> /etc/apt/sources.list"
+    echo $passwd | sudo -S bash -c "echo -e 'deb http://dl.astralinux.ru/astra/frozen/1.7_x86-64/1.7.3/repository-base/          1.7_x86-64 main contrib non-free' >> /etc/apt/sources.list"
+    echo $passwd | sudo -S bash -c "echo -e 'deb http://dl.astralinux.ru/astra/frozen/1.7_x86-64/1.7.3/repository-extended/      1.7_x86-64 main contrib non-free ' >> /etc/apt/sources.list"
     echo $passwd | sudo -S apt update
     $(zenity --info --text="Репозитории frozen 1.7.3 успешно добавлены. Можно проверить по пути /etc/apt/sources.list" --height=200 --width=300)
 }
