@@ -1,7 +1,7 @@
 install_app_armgs() {
 	file_path="/opt/armgs/armgs"
 	if [ -e "$file_path" ]; then
-		zenity --info --text="Пакет уже установлен!"
+		$(zenity --info --text="Пакет уже установлен!" --height=100 --width=160)
 		check_cancel
 	else 
 		passwd=$(zenity --password)

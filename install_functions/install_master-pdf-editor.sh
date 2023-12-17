@@ -1,7 +1,7 @@
 install_app_master-pdf-editor() {
 	file_path="/usr/share/applications/masterpdfeditor5.desktop"
 	if [ -e "$file_path" ]; then
-		zenity --info --text="Пакет уже установлен!"
+		$(zenity --info --text="Пакет уже установлен!" --height=100 --width=160)
 		check_cancel
 	else 	
 		passwd=$(zenity --password)

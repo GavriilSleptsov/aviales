@@ -2,7 +2,7 @@ install_app_wps() {
 	file_path="/usr/share/applications/wps-office-prometheus.desktop"
 	local check_code=0
 	if [ -e "$file_path" ]; then
-		zenity --info --text="Пакет уже установлен!"
+		$(zenity --info --text="Пакет уже установлен!" --height=100 --width=160)
 		check_cancel
 	else 
 		passwd=$(zenity --password)
