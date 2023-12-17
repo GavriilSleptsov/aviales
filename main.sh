@@ -115,6 +115,8 @@ source $path_install_functions/install_yandex.sh
 source $path_install_functions/install_armgs.sh
 
 source $path_install_functions/install_freeipa.sh
+
+source $path_install_functions/install_vipnet.sh
 ###########################################################################################
 ############################## КОНЕЦ БЛОКА event_item_menu ################################
 ###########################################################################################
