@@ -50,13 +50,6 @@ if check_program_installed "wps-office"; then
 	)
 fi
 
-if check_program_installed "notepadplus"; then
-    item_menu_remove_apps=(
-	"\"$item_menu_remove_notepad\""
-	"${item_menu_remove_apps[@]}"
-	)
-fi
-
 if check_program_installed "yandex-browser-stable"; then
     item_menu_remove_apps=(
 	"\"$item_menu_remove_yandex\""
@@ -70,4 +63,5 @@ if check_program_installed "remmina"; then
 	"${item_menu_remove_apps[@]}"
 	)
 fi
+
 
