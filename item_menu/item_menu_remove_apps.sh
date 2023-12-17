@@ -23,6 +23,8 @@ export item_menu_remove_yandex="Удалить Яндекс Браузер"
 
 export item_menu_remove_remina="Удалить Remmina"
 
+export item_menu_remove_vipnet="Удалить Vipnet Client 4.15.0 GUI"
+
 # Инициализация массива
 export item_menu_remove_apps=(
 "\"$exit_menu\"" 
@@ -60,6 +62,13 @@ fi
 if check_program_installed "remmina"; then
     item_menu_remove_apps=(
 	"\"$item_menu_remove_remina\""
+	"${item_menu_remove_apps[@]}"
+	)
+fi
+
+if check_program_installed "ViPNet"; then
+    item_menu_remove_apps=(
+	"\"$item_menu_remove_vipnet\""
 	"${item_menu_remove_apps[@]}"
 	)
 fi
