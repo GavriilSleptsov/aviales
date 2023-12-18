@@ -18,8 +18,8 @@ if getent group | grep -qw 'astra-admin' && id -nG | grep -qw 'astra-admin'; the
 	"$item_menu_information_freeipa" 
 	"$item_menu_information_network_folders"
 	"$item_menu_information_pomogator" 
-	"$exit_app")s
-
+	"$exit_app")
+	
 else
 	export item_menu_information_resources="Информационные ресурсы"
 	export item_menu_information_pomogator="О программе"
