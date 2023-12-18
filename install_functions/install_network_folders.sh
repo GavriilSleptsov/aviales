@@ -6,13 +6,13 @@ connect_network_folders () {
 		local program_name=$1
 		
 		# Имя монтируемой папки
-		folder_mount_name=Users/
+		folder_mount_name="Users/"
 		
 		# Данные для монтирования
-		mount_credentials=cifs username=tornado,password=torsys,iocharset=utf8,file_mode=0777,dir_mode=0777 0 0
+		mount_credentials="cifs username=tornado,password=torsys,iocharset=utf8,file_mode=0777,dir_mode=0777 0 0"
 	
 		# Строка, которую вы ищете в /etc/fstab
-		earch_string="//192.168.0.2/$folder_mount_name /media/aviales/$folder_mount_name $mount_credentials"
+		search_string="//192.168.0.2/$folder_mount_name /media/aviales/$folder_mount_name $mount_credentials"
 
 		# Строка из /etc/fstab
 		fstab_line=$(grep "$search_string" /etc/fstab)
