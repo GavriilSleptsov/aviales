@@ -48,9 +48,9 @@ connect_network_folders () {
 	 check_checkbox() {
 		check_checkbox_number=$1
 		if [ "$network_folder$check_checkbox_number" == "TRUE" ]; then
-			echo $passwd | sudo -S sed -i 's|#//192.168.0.2/$folder_mount_name /media/aviales/$folder_mount_name cifs username=tornado,password=torsys,iocharset=utf8,file_mode=0777,dir_mode=0777 0 0|//192.168.0.2/$folder_mount_name /media/aviales/$folder_mount_name cifs username=tornado,password=torsys,iocharset=utf8,file_mode=0777,dir_mode=0777 0 0|g' /etc/fstab
+			echo $passwd | sudo -S sed -i 's|#//192.168.0.2/Users/ /media/aviales/Users/ cifs username=tornado,password=torsys,iocharset=utf8,file_mode=0777,dir_mode=0777 0 0|//192.168.0.2/Users/ /media/aviales/Users/ cifs username=tornado,password=torsys,iocharset=utf8,file_mode=0777,dir_mode=0777 0 0|g' /etc/fstab
 		else
-			echo $passwd | sudo -S sed -i 's|//192.168.0.2/$folder_mount_name /media/aviales/$folder_mount_name cifs username=tornado,password=torsys,iocharset=utf8,file_mode=0777,dir_mode=0777 0 0|#//192.168.0.2/$folder_mount_name /media/aviales/$folder_mount_name cifs username=tornado,password=torsys,iocharset=utf8,file_mode=0777,dir_mode=0777 0 0|g' /etc/fstab
+			echo $passwd | sudo -S sed -i 's|//192.168.0.2/Users/ /media/aviales/Users/ cifs username=tornado,password=torsys,iocharset=utf8,file_mode=0777,dir_mode=0777 0 0|#//192.168.0.2/Users/ /media/aviales/Users/ cifs username=tornado,password=torsys,iocharset=utf8,file_mode=0777,dir_mode=0777 0 0|g' /etc/fstab
 		fi
 	 }
 	
@@ -69,11 +69,4 @@ connect_network_folders () {
 	--column "Общие папки" \
 	$network_folder1 Users
 	
-	if check_network_folder_connected "Users/"; then
-		network_folder1=TRUE
-		check_checkbox "1"
-	else
-		network_folder1=FALSE
-		check_checkbox "1"
-	fi
 }
