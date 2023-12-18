@@ -23,9 +23,11 @@ if getent group | grep -qw 'astra-admin' && id -nG | grep -qw 'astra-admin'; the
 else
 	export item_menu_information_resources="Информационные ресурсы"
 	export item_menu_information_pomogator="О программе"
+	export item_menu_information_network_folders="Сетевые папки"
 	export items_main_menu=( 
 	"$item_menu_information_resources"  
 	"$item_menu_information_pomogator" 
+	"$item_menu_information_network_folders"
 	"$exit_app")
 fi
 
