@@ -1,5 +1,26 @@
 #!/bin/bash
 
+# 1. E - mail
+# 2. KES 11 update
+# 3. Users
+# 4. Архив баз 1С
+# 5. Видеоматериалы и презентации
+# 6. Входящая и исходящая корреспонденция
+# 7. Государственные торги
+# 8. Должностные инструкции
+# 9. Картографические материалы
+#10. Лесные пожары
+#11. Общие документы
+#12. Оперативная информация
+#13. Паспорта автотехники
+#14. Программное обеспечение
+#15. Система управления охраной труда
+#16. Счетная палата
+#17. Табеля РДС
+#18. Учебный центр
+#19. Учредительная и руководящая документация
+#20. Якутское АО
+
 connect_network_folders () {
 	check_network_folder_connected() {
 	
@@ -23,17 +44,16 @@ connect_network_folders () {
 		fi
 	}
 	
-	Используем Zenity для отображения результата
+	# Проверяем и добавляем программы в массив
+	if check_network_folder_connected "Users/"; then
+		network_folder1=TRUE
+	else
+		network_folder1=FALSE
+	fi
+	
 	zenity --list \
 	--checklist \
 	--column "checkbox" \
-	--column "Result" \
-	FALSE "$result"
-	
-	# Проверяем и добавляем программы в массив
-	if check_network_folder_connected "Users/"; then
-		touch /home/$USER/Desktop/true.txt
-	else
-		touch /home/$USER/Desktop/false.txt
-	fi
+	--column "Общие папки" \
+	$network_folder1 Users
 }
