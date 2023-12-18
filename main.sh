@@ -100,6 +100,8 @@ source $path_events/event_item_menu_information_freeipa.sh
 
 source $path_events/event_item_menu_information_pomogator.sh
 
+source $path_events/event_item_menu_information_network_folders.sh
+
 source $path_install_functions/install_telegram.sh
 
 source $path_install_functions/install_remmina.sh
