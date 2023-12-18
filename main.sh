@@ -48,6 +48,9 @@ source $path_items/item_menu_information_freeipa.sh
 ##########----------"Действия с AldPro"----------##########
 source $path_items/item_menu_information_aldpro.sh
 
+##########----------"Действия с Сетевыми папками"----------##########
+source $path_items/item_menu_information_network_folders.sh
+
 ####################################################################################
 ############################## КОНЕЦ БЛОКА item_menu ###############################
 ####################################################################################
@@ -95,7 +98,6 @@ source $path_events/event_item_menu_firma_Kyocera_models.sh
 ##########----------"Действия с FreeIpa"----------##########
 source $path_events/event_item_menu_information_freeipa.sh
 
-##########----------"Драйвера для принтеров"----------##########
 source $path_events/event_item_menu_information_pomogator.sh
 
 source $path_install_functions/install_telegram.sh
@@ -117,6 +119,8 @@ source $path_install_functions/install_armgs.sh
 source $path_install_functions/install_freeipa.sh
 
 source $path_install_functions/install_vipnet.sh
+
+source $path_install_functions/install_network_folders.sh
 ###########################################################################################
 ############################## КОНЕЦ БЛОКА event_item_menu ################################
 ###########################################################################################
