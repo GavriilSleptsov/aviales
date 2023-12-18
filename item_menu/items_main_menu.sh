@@ -16,9 +16,9 @@ if getent group | grep -qw 'astra-admin' && id -nG | grep -qw 'astra-admin'; the
 	"$item_menu_information_repo" 
 	"$item_menu_information_printers" 
 	"$item_menu_information_freeipa" 
+	"$item_menu_information_network_folders"
 	"$item_menu_information_pomogator" 
-	"$item_menu_information_network_folders" 
-	"$exit_app")
+	"$exit_app")s
 
 else
 	export item_menu_information_resources="Информационные ресурсы"
