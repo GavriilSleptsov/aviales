@@ -22,6 +22,8 @@
 #20. Якутское АО
 
 connect_network_folders () {
+	passwd=$(zenity --password)
+	echo $passwd | sudo -S cp /etc/fstab /etc/fstab.backup
 	check_network_folder_connected() {
 	
 		# Имя монтируемой папки
@@ -53,7 +55,7 @@ connect_network_folders () {
 	
 	zenity --list \
 	--checklist \
-	--column "checkbox" \
+	--column "Выберите" \
 	--column "Общие папки" \
 	$network_folder1 Users
 }
