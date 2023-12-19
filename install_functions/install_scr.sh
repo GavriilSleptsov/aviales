@@ -1,4 +1,4 @@
-install_app_yandex() {
+install_app_scr() {
 	file_path="/usr/share/applications/simplescreenrecorder.desktop"
 	if [ -e "$file_path" ]; then
 		$(zenity --info --text="Пакет уже установлен!" --height=100 --width=160)
