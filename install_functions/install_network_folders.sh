@@ -7,7 +7,7 @@ connect_network_folders () {
     
     check_cancel
 	echo "$passwd" | sudo -S mkdir -p /media/aviales/Общие\ документы
-    network_folder_text=$(curl "/opt/aitekinfo/text_for_zenity/network_folder")
+    network_folder_text=$(curl "https://raw.githubusercontent.com/GavriilSleptsov/aviales/main/text_for_zenity/network_folder")
 	
     echo "$passwd" | sudo -S sh -c 'cat <<EOL >> /etc/fstab
 #
