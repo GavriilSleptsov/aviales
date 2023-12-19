@@ -46,6 +46,15 @@ connect_network_folders () {
 		fi
 	}
 	
+	check_checkbox() {
+		check_checkbox_number=$1
+		if [ "$network_folder1" == "TRUE" ]; then
+			echo $passwd | sudo -S sed -i 's|#//192.168.0.2/Общие\040документы/ /media/aviales/Общие\040документы/ $mount_credentials|//192.168.0.2/Общие\040документы/ /media/aviales/Общие\040документы/ $mount_credentials|g' /etc/fstab
+		else
+			echo $passwd | sudo -S sed -i 's|//192.168.0.2/Общие\040документы/ /media/aviales/Общие\040документы/ $mount_credentials|#//192.168.0.2/Общие\040документы/ /media/aviales/Общие\040документы/ $mount_credentials|g' /etc/fstab
+		fi
+	 }
+	
 	# Проверяем и добавляем программы в массив
 	if check_network_folder_connected "Общие документы/"; then
 		network_folder1=TRUE
@@ -58,13 +67,5 @@ connect_network_folders () {
 	--column "Выберите" \
 	--column "Общие папки" \
 	$network_folder1 Users
-	
-	 check_checkbox() {
-		check_checkbox_number=$1
-		if [ "$network_folder1" == "TRUE" ]; then
-			echo $passwd | sudo -S sed -i 's|#//192.168.0.2/Общие\040документы/ /media/aviales/Общие\040документы/ $mount_credentials|//192.168.0.2/Общие\040документы/ /media/aviales/Общие\040документы/ $mount_credentials|g' /etc/fstab
-		else
-			echo $passwd | sudo -S sed -i 's|//192.168.0.2/Общие\040документы/ /media/aviales/Общие\040документы/ $mount_credentials|#//192.168.0.2/Общие\040документы/ /media/aviales/Общие\040документы/ $mount_credentials|g' /etc/fstab
-		fi
-	 }
+	check_checkbox
 }
