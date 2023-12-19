@@ -6,11 +6,11 @@ install_app_myoffice() {
 	else 
 		passwd=$(zenity --password)
 		check_cancel
-		file="/home/$USER/Desktop/myoffice-standard-documents_2.6.0_amd64.deb"
+		file="/home/$USER/Desktop/myoffice-standard-documents_2.7.0_amd64.deb"
 
 		zenity --auto-close &
 		(
-			wget https://slepsov.ru/aitekinfo/myoffice-standard-documents_2.6.0_amd64.deb -P /home/$USER/Desktop/
+			wget https://slepsov.ru/aitekinfo/myoffice-standard-documents_2.7.0_amd64.deb -P /home/$USER/Desktop/
 			
 			# Проверка кода завершения wget
 			if [ $? -eq 0 ]; then
