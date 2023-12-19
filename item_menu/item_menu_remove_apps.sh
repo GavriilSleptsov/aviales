@@ -25,6 +25,8 @@ export item_menu_remove_remina="Удалить Remmina"
 
 export item_menu_remove_vipnet="Удалить Vipnet Client 4.15.0 GUI"
 
+export item_menu_remove_vipnet="Удалить RuDesktop"
+
 # Инициализация массива
 export item_menu_remove_apps=(
 "\"$exit_menu\"" 
@@ -73,4 +75,9 @@ if check_program_installed "ViPNet"; then
 	)
 fi
 
-
+if check_program_installed "rudesktop"; then
+    item_menu_remove_apps=(
+	"\"$item_menu_remove_rudesktop\""
+	"${item_menu_remove_apps[@]}"
+	)
+fi
