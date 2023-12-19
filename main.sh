@@ -51,7 +51,7 @@ source $path_items/item_menu_information_aldpro.sh
 ##########----------"Действия с Сетевыми папками"----------##########
 source $path_items/item_menu_information_network_folders.sh
 
-source $path_items/item_menu_information_crypto.sh
+source $path_items/item_menu_information_cryptopro.sh
 
 ####################################################################################
 ############################## КОНЕЦ БЛОКА item_menu ###############################
@@ -104,7 +104,7 @@ source $path_events/event_item_menu_information_pomogator.sh
 
 source $path_events/event_item_menu_information_network_folders.sh
 
-source $path_events/event_item_menu_information_crypto.sh
+source $path_events/event_item_menu_information_cryptopro.sh
 
 source $path_install_functions/install_telegram.sh
 
