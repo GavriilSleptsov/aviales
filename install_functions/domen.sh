@@ -26,5 +26,5 @@ domen_connect() {
 		else
 			zenity --error --title="Ошибка" --text="Ошибка при присоединении к домену!."
 		fi
-	) | zenity --progress --pulsate --title "Загрузка"  --height=140 --width=250 --text="Пытаюсь присоединиться в домен..." --auto-close
+	) | zenity --progress --pulsate --title "Загрузка"  --height=130 --width=250 --text="Пытаюсь присоединиться в домен..." --auto-close
 }
