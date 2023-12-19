@@ -8,6 +8,7 @@ export item_menu_install_wps="Установить Wps-Office (305Mb)"
 export item_menu_install_yandex="Установить Yandex-Browser-Stable (130MB)"
 export item_menu_install_remina="Установить Remmina (2.8Mb)" 
 export item_menu_install_vipnet="Установить Vipnet Client 4.15.0 GUI (41.86Mb)" 
+export item_menu_install_rudesktop="Установить RuDesktop (8.74Mb)" 
 export item_menu_install_apps=( 
 "\"$item_menu_install_myoffice\""
 "\"$item_menu_install_crypto1290\""     
@@ -17,6 +18,7 @@ export item_menu_install_apps=(
 "\"$item_menu_install_yandex\"" 
 "\"$item_menu_install_remina\"" 
 "\"$item_menu_install_vipnet\""
+"\"$item_menu_install_rudesktop\""
 "\"$exit_menu\"" 
 "\"$exit_app\"")
  
