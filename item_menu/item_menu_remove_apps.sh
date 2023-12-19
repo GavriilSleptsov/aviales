@@ -31,6 +31,8 @@ export item_menu_remove_sabyplugin="Удалить SabyPlugin (СБИС Плаг
 
 export item_menu_remove_carma="Удалить KARMA"
 
+export item_menu_remove_scr="Удалить SimpleScreenRecorder"
+
 
 # Инициализация массива
 export item_menu_remove_apps=(
@@ -97,6 +99,13 @@ fi
 if check_program_installed "carma"; then
     item_menu_remove_apps=(
 	"\"$item_menu_remove_carma\""
+	"${item_menu_remove_apps[@]}"
+	)
+fi
+
+if check_program_installed "simplescreenrecorder"; then
+    item_menu_remove_apps=(
+	"\"$item_menu_remove_scr\""
 	"${item_menu_remove_apps[@]}"
 	)
 fi
