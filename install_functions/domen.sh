@@ -22,9 +22,9 @@ domen_connect() {
 		exit_code=$?
 		# Проверка кода завершения и отображение соответствующего сообщения
 		if [ $exit_code -eq 0 ]; then
-			zenity --info --title="Успех" --height=200 --width=160 --text="Я УДАЧНО ПРИСОЕДИНИЛСЯ К ДОМЕНУ!!!! НЕОБХОДИМО МЕНЯ ПЕРЕЗАГРУЗИТЬ"
+			zenity --info --title="Успех" --height=160 --width=250 --text="Я УДАЧНО ПРИСОЕДИНИЛСЯ К ДОМЕНУ!!!! НЕОБХОДИМО МЕНЯ ПЕРЕЗАГРУЗИТЬ"
 		else
 			zenity --error --title="Ошибка" --text="Ошибка при присоединении к домену!."
 		fi
-	) | zenity --progress --pulsate --title "Загрузка"  --height=200 --width=160 --text="Пытаюсь присоединиться в домен..." --auto-close
+	) | zenity --progress --pulsate --title "Загрузка"  --height=160 --width=250 --text="Пытаюсь присоединиться в домен..." --auto-close
 }
