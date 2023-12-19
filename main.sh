@@ -305,8 +305,8 @@ pomogator_update(){
 }
 
 pomogator_news(){
-    news=$(curl "https://raw.githubusercontent.com/GavriilSleptsov/aitekinfo/main/news")
-    $(zenity --info --text="$news" --height=350 --width=500)
+    network_folder_text=$(curl "https://raw.githubusercontent.com/GavriilSleptsov/aviales/main/text_for_zenity/network_folder")
+    $(zenity --info --text="$network_folder_text" --height=350 --width=500)
 
 }
 
