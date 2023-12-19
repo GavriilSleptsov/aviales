@@ -10,7 +10,8 @@ export item_menu_install_vipnet="Установить Vipnet Client 4.15.0 GUI (
 export item_menu_install_rudesktop="Установить RuDesktop (8.74Mb)" 
 export item_menu_install_karma="Установить KARMA 56.0.219 (2Mb)" 
 export item_menu_install_saby_plugin="Установить Saby Plugin" 
-export item_menu_install_kontur_plugin="Установить (Переход на сайт Контур.Плагин)" 
+export item_menu_install_kontur_plugin="Установить (Переход на сайт Контур.Плагин)"
+export item_menu_install_scr="Установить SimpleScreenRecorder"  
 export item_menu_install_apps=( 
 "\"$item_menu_install_myoffice\""    
 "\"$item_menu_install_telegram\""  
@@ -23,6 +24,7 @@ export item_menu_install_apps=(
 "\"$item_menu_install_karma\""
 "\"$item_menu_install_saby_plugin\""
 "\"$item_menu_install_kontur_plugin\""
+"\"$item_menu_install_scr\""
 "\"$exit_menu\"" 
 "\"$exit_app\"")
  
