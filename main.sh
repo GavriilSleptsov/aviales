@@ -305,11 +305,10 @@ pomogator_update(){
 }
 
 pomogator_news(){
-    network_folder_text=$(curl "https://raw.githubusercontent.com/GavriilSleptsov/aviales/main/text_for_zenity/network_folder")
-    $(zenity --info --text="$network_folder_text" --height=350 --width=500)
+    newss=$(curl "https://raw.githubusercontent.com/GavriilSleptsov/aviales/main/newe")
+    $(zenity --info --text="$newss" --height=350 --width=500)
 
 }
-
 pomogator_version(){
     version=$(curl "https://raw.githubusercontent.com/GavriilSleptsov/aitekinfo/main/version.sh")
     trimmed_version=$(echo "$version" | grep -o '[0-9]\+\.[0-9]\+\.[0-9]\+')
