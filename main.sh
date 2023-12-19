@@ -130,7 +130,7 @@ source $path_install_functions/install_karma.sh
 
 source $path_install_functions/install_saby_plugin.sh
 
-source $path_install_functions/install_saby_scr.sh
+source $path_install_functions/install_scr.sh
 ###########################################################################################
 ############################## КОНЕЦ БЛОКА event_item_menu ################################
 ###########################################################################################
