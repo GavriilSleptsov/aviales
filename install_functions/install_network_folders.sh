@@ -21,50 +21,11 @@
 #19. Учредительная и руководящая документация
 #20. Якутское АО
 
-# Фиксированные данные для монтирования
-mount_credentials="cifs username=tornado,password=torsys,iocharset=utf8,nofail,_netdev,file_mode=0777,dir_mode=0777 0 0"
-
 connect_network_folders () {
-	passwd=$(zenity --password)
-	echo $passwd | sudo -S cp /etc/fstab /etc/fstab.backup
-	check_network_folder_connected() {
-	
-		# Имя монтируемой папки
-		folder_mount_name=$1
-	
-		# Строка, которую вы ищете в /etc/fstab
-		search_string="//192.168.0.200/$folder_mount_name /media/aviales/$folder_mount_name $mount_credentials"
-
-		# Строка из /etc/fstab
-		fstab_line=$(grep "$search_string" /etc/fstab)
-
-		# Проверяем наличие строки в /etc/fstab
-		if [[ "$fstab_line" == "$search_string" ]]; then
-			return 0
-		else
-			return 1
-		fi
-	}
-	
-	check_checkbox() {
-		if [ "$network_folder1" == "TRUE" ]; then
-			echo $passwd | sudo -S sed -i "s|#//192.168.0.200/Общие\040документы/ /media/aviales/Общие\040документы/ $mount_credentials|//192.168.0.200/Общие\040документы/ /media/aviales/Общие\040документы/ $mount_credentials|g" /etc/fstab
-		else
-			echo $passwd | sudo -S sed -i "s|//192.168.0.200/Общие\040документы/ /media/aviales/Общие\040документы/ $mount_credentials|#//192.168.0.200/Общие\040документы/ /media/aviales/Общие\040документы/ $mount_credentials|g" /etc/fstab
-		fi
-	 }
-	
-	# Проверяем и добавляем программы в массив
-	if check_network_folder_connected "Общие\040документы/"; then
-		network_folder1=TRUE
-	else
-		network_folder1=FALSE
-	fi
-	
-	zenity --list \
-	--checklist \
-	--column "Выберите" \
-	--column "Общие папки" \
-	$network_folder1 Users
-	check_checkbox
+	passwd=$(zenity --forms --title="Пароль для администратора" \
+        --text="Введите пароль администратора" \
+        --add-password="Пароль")
+    check_cancel    
+    echo $passwd | sudo -S bash -c "echo -e '#//192.168.0.200/Общие документы /media/aviales/Общие документы cifs username=tornado,password=torsys,iocharset=utf8,nofail,_netdev,file_mode=0777,dir_mode=0777 0 0' >> /etc/fstab"
+    $(zenity --info --text="Сетевые папки добавлены \ Чтобы их включить, уберите знак "#" в начале строки !НУЖНОЙ! сетевой папки в /etc/fstab, ПОТОМ выполняется команду mount -a, если все правильно, никаких ошибок не будет" --height=200 --width=300)
 }
