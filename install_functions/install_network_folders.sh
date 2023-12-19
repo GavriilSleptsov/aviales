@@ -33,7 +33,7 @@ connect_network_folders () {
 		folder_mount_name=$1
 	
 		# Строка, которую вы ищете в /etc/fstab
-		search_string="//192.168.0.2/$folder_mount_name /media/aviales/$folder_mount_name $mount_credentials"
+		search_string="//192.168.0.200/$folder_mount_name /media/aviales/$folder_mount_name $mount_credentials"
 
 		# Строка из /etc/fstab
 		fstab_line=$(grep "$search_string" /etc/fstab)
@@ -47,16 +47,15 @@ connect_network_folders () {
 	}
 	
 	check_checkbox() {
-		check_checkbox_number=$1
 		if [ "$network_folder1" == "TRUE" ]; then
-			echo $passwd | sudo -S sed -i 's|#//192.168.0.2/Общие\040документы/ /media/aviales/Общие\040документы/ $mount_credentials|//192.168.0.2/Общие\040документы/ /media/aviales/Общие\040документы/ $mount_credentials|g' /etc/fstab
+			echo $passwd | sudo -S sed -i "s|#//192.168.0.200/Общие\040документы/ /media/aviales/Общие\040документы/ $mount_credentials|//192.168.0.200/Общие\040документы/ /media/aviales/Общие\040документы/ $mount_credentials|g" /etc/fstab
 		else
-			echo $passwd | sudo -S sed -i 's|//192.168.0.2/Общие\040документы/ /media/aviales/Общие\040документы/ $mount_credentials|#//192.168.0.2/Общие\040документы/ /media/aviales/Общие\040документы/ $mount_credentials|g' /etc/fstab
+			echo $passwd | sudo -S sed -i "s|//192.168.0.200/Общие\040документы/ /media/aviales/Общие\040документы/ $mount_credentials|#//192.168.0.200/Общие\040документы/ /media/aviales/Общие\040документы/ $mount_credentials|g" /etc/fstab
 		fi
 	 }
 	
 	# Проверяем и добавляем программы в массив
-	if check_network_folder_connected "Общие документы/"; then
+	if check_network_folder_connected "Общие\040документы/"; then
 		network_folder1=TRUE
 	else
 		network_folder1=FALSE
