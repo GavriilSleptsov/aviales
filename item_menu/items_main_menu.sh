@@ -7,7 +7,6 @@ if getent group | grep -qw 'astra-admin' && id -nG | grep -qw 'astra-admin'; the
 	export item_menu_information_install="Установка программ"
 	export item_menu_information_remove="Удаление программ"
 	export item_menu_information_repo="Сетевые репозитории"
-	export item_menu_information_printers="Драйвера для принтеров"
 	export item_menu_information_freeipa="Действия с Freeipa"
 	export item_menu_information_pomogator="О программе"
 	export item_menu_information_network_folders="Сетевые папки"
