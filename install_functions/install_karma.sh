@@ -30,7 +30,6 @@ install_app_karma() {
 		(
 			# Установка пакета с использованием sudo и передачей пароля через stdin
 			echo $passwd | sudo -S dpkg -i /home/$USER/Desktop/carma-common.deb /home/$USER/Desktop/carma-dev.deb /home/$USER/Desktop/carma-capilite.deb
-			echo $passwd | sudo -S export PATH="$(/bin/ls -d /opt/cprocsp/{s,}bin/*|tr '\n' ':')$PATH"
 			# Получение кода завершения установки
 			exit_code=$?
 			# Проверка кода завершения и отображение соответствующего сообщения
@@ -41,17 +40,19 @@ install_app_karma() {
 				zenity --error --title="Ошибка" --text="Ошибка при установке пакета."
 			fi
 		) | zenity --progress --pulsate --title "Установка пакета" --text="Подождите, идет установка..." --auto-close
-		# Проверка наличия файла перед удалением
-		#if [ -e "$file1" ]; then
-		#	rm "$file1"
-		#fi
-		#
-		#if [ -e "$file2" ]; then
-		#	rm "$file2"
-		#fi
 		
-		#if [ -e "$file3" ]; then
-		#	rm "$file3"
-		#fi
+		echo $passwd | sudo -S export PATH="$(/bin/ls -d /opt/cprocsp/{s,}bin/*|tr '\n' ':')$PATH"
+		Проверка наличия файла перед удалением
+		if [ -e "$file1" ]; then
+			rm "$file1"
+		fi
+		
+		if [ -e "$file2" ]; then
+			rm "$file2"
+		fi
+		
+		if [ -e "$file3" ]; then
+			rm "$file3"
+		fi
 	fi
 }
