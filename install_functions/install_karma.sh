@@ -43,16 +43,16 @@ install_app_karma() {
 		
 		echo $passwd | sudo -S export PATH="$(/bin/ls -d /opt/cprocsp/{s,}bin/*|tr '\n' ':')$PATH"
 		Проверка наличия файла перед удалением
-		if [ -e "$file1" ]; then
-			rm "$file1"
-		fi
+		#if [ -e "$file1" ]; then
+		#	rm "$file1"
+		#fi
 		
-		if [ -e "$file2" ]; then
-			rm "$file2"
-		fi
+		#if [ -e "$file2" ]; then
+		#	rm "$file2"
+		#fi
 		
-		if [ -e "$file3" ]; then
-			rm "$file3"
-		fi
+		#if [ -e "$file3" ]; then
+		#	rm "$file3"
+		#fi
 	fi
 }
