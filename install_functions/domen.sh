@@ -6,7 +6,7 @@ domen_connect() {
 		echo $passwd | sudo -S apt install astra-winbind -y
 		# Проверка кода завершения wget
 		if [ $? -eq 0 ]; then
-			zenity --info --title="Успех" --text="Файл успешно загружен!"
+			zenity --info --title="Успех" --text="Пакет успешно загружен!"
 		else
 			zenity --error --title="Ошибка" --text="Ошибка при загрузке файла."
 			exit 1
@@ -22,9 +22,9 @@ domen_connect() {
 		exit_code=$?
 		# Проверка кода завершения и отображение соответствующего сообщения
 		if [ $exit_code -eq 0 ]; then
-			zenity --info --title="Успех" --text="Пакет успешно установлен! НЕОБХОДИМО ПЕРЕЗАГРУЗИТЬ ПК!"
+			zenity --info --title="Успех" --height=200 --width=160 --text="Я УДАЧНО ПРИСОЕДИНИЛСЯ К ДОМЕНУ!!!! НЕОБХОДИМО МЕНЯ ПЕРЕЗАГРУЗИТЬ"
 		else
-			zenity --error --title="Ошибка" --text="Ошибка при установке пакета!."
+			zenity --error --title="Ошибка" --text="Ошибка при присоединении к домену!."
 		fi
-	) | zenity --progress --pulsate --title --height=130 --width=160 "Загрузка" --text="Пытаюсь присоединиться в домен..." --auto-close
+	) | zenity --progress --pulsate --title "Загрузка"  --height=200 --width=160 --text="Пытаюсь присоединиться в домен..." --auto-close
 }
