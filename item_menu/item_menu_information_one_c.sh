@@ -1,8 +1,8 @@
 #!/bin/bash
-export item_menu_one_c_first="Загрузить КриптоПро 5.0.11455 (23.18Mb)"
-export item_menu_one_c_second="Установить cAdES Browser Plug-in (18Mb)"
-export item_menu_one_c_three="Установить IFCPlugin (5.02Mb)"
-export item_menu_one_c_four="Установить IFCPlugin (5.02Mb)"
+export item_menu_one_c_first="Загрузить 1C: Предприятие. Тонкий клиент 8.3.17.2760 (138Mb)"
+export item_menu_one_c_second="Загрузить 1C: Предприятие. Тонкий клиент 8.3.17.1851 (157Mb)"
+export item_menu_one_c_three="Загрузить 1C: Предприятие. Тонкий клиент 8.3.17.2256 (158Mb)"
+export item_menu_one_c_four="Загрузить 1C: Предприятие. Тонкий клиент 8.3.22.2283 (124Mb)"
 export item_menu_one_c_all=(
 "\"$item_menu_one_c_first\""
 "\"$item_menu_one_c_second\""
