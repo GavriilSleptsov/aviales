@@ -59,7 +59,7 @@ if check_program_installed "yandex-browser-stable"; then
 	)
 fi
 
-if check_program_installed "org.remmina.Remmaina"; then
+if check_program_installed "org.remmina.Remmina"; then
     item_menu_remove_apps=(
 	"\"$item_menu_remove_remina\""
 	"${item_menu_remove_apps[@]}"
