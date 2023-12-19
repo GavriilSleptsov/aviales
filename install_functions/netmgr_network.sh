@@ -26,7 +26,6 @@ fi
 echo "$con_name"
 
 #сбор данных
-add_network_config
 nmcli connection modify "$con_name" connection.autoconnect yes ipv4.method manual ipv4.dns $dns1_ip ipv4.dns-search $search_domain_name ipv4.addresses $computer_ip/$subnet_mask ipv4.gateway $gateway_ip
 
 nmcli connection down "$con_name"
