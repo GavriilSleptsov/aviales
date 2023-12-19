@@ -17,7 +17,7 @@ domen_connect() {
 	zenity --auto-close &
 	(
 		# Установка пакета с использованием sudo и передачей пароля через stdin
-		echo $passwd | sudo -S astra-winbind -dc srv1.svfu.ru -u admin -p P@ssw0rd -y
+		echo $passwd | sudo -S astra-winbind -dc master.aviales.local -u tornado -p torsys -y
 		# Получение кода завершения установки
 		exit_code=$?
 		# Проверка кода завершения и отображение соответствующего сообщения
