@@ -27,7 +27,10 @@ export item_menu_remove_vipnet="Удалить Vipnet Client 4.15.0 GUI"
 
 export item_menu_remove_rudesktop="Удалить RuDesktop"
 
-export item_menu_remove_sabyplugin="Удалить SabyPlugin(СБИС Пдагин)"
+export item_menu_remove_sabyplugin="Удалить SabyPlugin (СБИС Плагин)"
+
+export item_menu_remove_carma="Удалить KARMA"
+
 
 # Инициализация массива
 export item_menu_remove_apps=(
@@ -90,3 +93,11 @@ if check_program_installed "Sbis3Plugin"; then
 	"${item_menu_remove_apps[@]}"
 	)
 fi
+
+if check_program_installed "carma"; then
+    item_menu_remove_apps=(
+	"\"$item_menu_remove_carma\""
+	"${item_menu_remove_apps[@]}"
+	)
+fi
+
