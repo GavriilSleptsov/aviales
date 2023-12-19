@@ -181,6 +181,12 @@ remove_app(){
     local passwd=$(zenity --password)
     check_cancel
     echo $passwd | sudo -S apt remove "$1" -y
+	if [ $? -eq 0 ]; then
+		zenity --info --title="Успех" --text="Файл успешно удален!"
+		else
+			zenity --error --title="Ошибка" --text="Ошибка при удалении файла!."
+		exit 1
+	fi
 }
 
 #-------------------------------------domain menu------------------------------------#
