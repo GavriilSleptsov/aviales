@@ -55,6 +55,8 @@ source $path_items/item_menu_information_cryptopro.sh
 
 source $path_items/item_menu_information_one_c.sh
 
+source $path_items/item_menu_information_domen.sh
+
 ####################################################################################
 ############################## КОНЕЦ БЛОКА item_menu ###############################
 ####################################################################################
@@ -110,6 +112,8 @@ source $path_events/event_item_menu_information_cryptopro.sh
 
 source $path_events/event_item_menu_information_one_c.sh
 
+source $path_events/event_item_menu_information_domen.sh
+
 source $path_install_functions/install_telegram.sh
 
 source $path_install_functions/install_remmina.sh
@@ -143,6 +147,8 @@ source $path_install_functions/install_scr.sh
 source $path_install_functions/crypto.sh
 
 source $path_install_functions/download_one_c.sh
+
+source $path_install_functions/domen.sh
 
 ###########################################################################################
 ############################## КОНЕЦ БЛОКА event_item_menu ################################
