@@ -10,7 +10,7 @@ if getent group | grep -qw 'astra-admin' && id -nG | grep -qw 'astra-admin'; the
 	export item_menu_information_pomogator="О программе"
 	export item_menu_information_network_folders="Сетевые папки"
 	export item_menu_information_cryptopro="КриптоПро 5"
-	export item_menu_information_1с="C1C: Предприятие"
+	export item_menu_information_1с="1C: Предприятие"
 	export items_main_menu=( 
 	"$item_menu_information_resources"  
 	"$item_menu_information_install" 
