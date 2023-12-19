@@ -28,12 +28,7 @@ install_app_saby_plugin() {
 			# Получение кода завершения установки
 			exit_code=$?
 			# Проверка кода завершения и отображение соответствующего сообщения
-			if [ $exit_code -eq 0 ]; then
-				zenity --info --title="Успех" --text="Пакет успешно установлен!"
-				cp $file_path /home/$USER/Desktop
-			else
-				zenity --error --title="Ошибка" --text="Ошибка при установке пакета."
-			fi
+			zenity --info --title="Успех" --text="Пакет успешно установлен!"
 		) | zenity --progress --pulsate --title "Установка пакета" --text="Подождите, идет установка..." --auto-close
 		# Проверка наличия файла перед удалением
 		#if [ -e "$file" ]; then
