@@ -27,6 +27,8 @@ export item_menu_remove_vipnet="Удалить Vipnet Client 4.15.0 GUI"
 
 export item_menu_remove_rudesktop="Удалить RuDesktop"
 
+export item_menu_remove_sabyplugin="Удалить SabyPlugin(СБИС Пдагин)"
+
 # Инициализация массива
 export item_menu_remove_apps=(
 "\"$exit_menu\"" 
@@ -78,6 +80,13 @@ fi
 if check_program_installed "rudesktop"; then
     item_menu_remove_apps=(
 	"\"$item_menu_remove_rudesktop\""
+	"${item_menu_remove_apps[@]}"
+	)
+fi
+
+if check_program_installed "Sbis3Plugin"; then
+    item_menu_remove_apps=(
+	"\"$item_menu_remove_sabyplugin\""
 	"${item_menu_remove_apps[@]}"
 	)
 fi
