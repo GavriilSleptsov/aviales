@@ -25,7 +25,7 @@ export item_menu_remove_remina="Удалить Remmina"
 
 export item_menu_remove_vipnet="Удалить Vipnet Client 4.15.0 GUI"
 
-export item_menu_remove_vipnet="Удалить RuDesktop"
+export item_menu_remove_rudesktop="Удалить RuDesktop"
 
 # Инициализация массива
 export item_menu_remove_apps=(
