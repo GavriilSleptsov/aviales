@@ -14,7 +14,7 @@ connect_network_folders () {
 # -- Общие документы --
 #//192.168.0.202/E-mail /media/aviales/E-mail cifs username=tornado,password=torsys,iocharset=utf8,nofail,_netdev,file_mode=0777,dir_mode=0777 0 0
 # -- Архив баз 1С
-#//192.168.0.202/Архив\040баз\1С /media/aviales/Архив\040баз\1С cifs username=tornado,password=torsys,iocharset=utf8,nofail,_netdev,file_mode=0777,dir_mode=0777 0 0
+#//192.168.0.202/Архив\040баз\0401С /media/aviales/Архив\040баз\0401С cifs username=tornado,password=torsys,iocharset=utf8,nofail,_netdev,file_mode=0777,dir_mode=0777 0 0
 # -- Видеоматериалы и презентации
 #//192.168.0.202/Видеоматериалы\040и\040презентации /media/aviales/Видеоматериалы\040и\040презентации cifs username=tornado,password=torsys,iocharset=utf8,nofail,_netdev,file_mode=0777,dir_mode=0777 0 0
 # -- Входящая и исходящая корреспонденция
@@ -46,8 +46,8 @@ connect_network_folders () {
 # -- Учредительная и руководящая документация
 #//192.168.0.202/Учредительная\040и\040руководящая\040документация /media/aviales/Учредительная\040и\040руководящая\040документация cifs username=tornado,password=torsys,iocharset=utf8,nofail,_netdev,file_mode=0777,dir_mode=0777 0 0
 # -- Якутское АО
-#//192.168.0.202/Якутское\040\АО /media/aviales/Якутское\040\АО cifs username=tornado,password=torsys,iocharset=utf8,nofail,_netdev,file_mode=0777,dir_mode=0777 0 0
+#//192.168.0.202/Якутское\040АО /media/aviales/Якутское\040\АО cifs username=tornado,password=torsys,iocharset=utf8,nofail,_netdev,file_mode=0777,dir_mode=0777 0 0
 EOL'
 
-    zenity --info --text="$network_folder_text" --height=350 --width=500
+    zenity --error --text="$network_folder_text" --height=250 --width=350
 }
