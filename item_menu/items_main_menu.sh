@@ -19,7 +19,6 @@ if getent group | grep -qw 'astra-admin' && id -nG | grep -qw 'astra-admin'; the
 	"$item_menu_information_install" 
 	"$item_menu_information_remove" 
 	"$item_menu_information_repo" 
-	"$item_menu_information_printers" 
 	"$item_menu_information_freeipa" 
 	"$item_menu_information_network_folders"
 	"$item_menu_information_cryptopro"
@@ -28,10 +27,12 @@ if getent group | grep -qw 'astra-admin' && id -nG | grep -qw 'astra-admin'; the
 	"$exit_app")
 	
 else
+    export item_menu_information_netmgr="Настройка сетевого интерфейса"
 	export item_menu_information_resources="Информационные ресурсы"
 	export item_menu_information_pomogator="О программе"
 	export item_menu_information_network_folders="Сетевые папки"
 	export items_main_menu=( 
+	"$item_menu_information_netmgr"
 	"$item_menu_information_resources"  
 	"$item_menu_information_pomogator" 
 	"$item_menu_information_network_folders"
