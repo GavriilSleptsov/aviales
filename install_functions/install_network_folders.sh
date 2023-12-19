@@ -26,6 +26,8 @@ connect_network_folders () {
         --text="Введите пароль администратора" \
         --add-password="Пароль")
     check_cancel    
+	echo $passwd | sudo -S bash -c "echo -e '### Общие папки' >> /etc/fstab"
     echo $passwd | sudo -S bash -c "echo -e '#//192.168.0.200/Общие\040документы /media/aviales/Общие\040документы cifs username=tornado,password=torsys,iocharset=utf8,nofail,_netdev,file_mode=0777,dir_mode=0777 0 0' >> /etc/fstab"
-    $(zenity --info --text="$/text_for_zenity/network_folder" --height=200 --width=300)
+    echo $passwd | sudo -S bash -c "echo -e '#' >> /etc/fstab"
+	$(zenity --info --text="$/text_for_zenity/network_folder" --height=200 --width=300)
 }
