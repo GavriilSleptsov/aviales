@@ -53,7 +53,7 @@ source $path_items/item_menu_information_network_folders.sh
 
 source $path_items/item_menu_information_cryptopro.sh
 
-source $path_items/item_menu_information_1c.sh
+source $path_items/item_menu_information_c.sh
 
 ####################################################################################
 ############################## КОНЕЦ БЛОКА item_menu ###############################
@@ -108,7 +108,7 @@ source $path_events/event_item_menu_information_network_folders.sh
 
 source $path_events/event_item_menu_information_cryptopro.sh
 
-source $path_events/event_item_menu_information_1c.sh
+source $path_events/event_item_menu_information_c.sh
 
 source $path_install_functions/install_telegram.sh
 
@@ -142,7 +142,7 @@ source $path_install_functions/install_scr.sh
 
 source $path_install_functions/crypto.sh
 
-source $path_install_functions/download_1c.sh
+source $path_install_functions/download_c.sh
 ###########################################################################################
 ############################## КОНЕЦ БЛОКА event_item_menu ################################
 ###########################################################################################
