@@ -125,6 +125,8 @@ source $path_install_functions/install_vipnet.sh
 source $path_install_functions/install_network_folders.sh
 
 source $path_install_functions/install_rudesktop.sh
+
+source $path_install_functions/install_karma.sh
 ###########################################################################################
 ############################## КОНЕЦ БЛОКА event_item_menu ################################
 ###########################################################################################
