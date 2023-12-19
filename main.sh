@@ -123,6 +123,8 @@ source $path_install_functions/install_freeipa.sh
 source $path_install_functions/install_vipnet.sh
 
 source $path_install_functions/install_network_folders.sh
+
+source $path_install_functions/install_rudesktop.sh
 ###########################################################################################
 ############################## КОНЕЦ БЛОКА event_item_menu ################################
 ###########################################################################################
@@ -438,7 +440,7 @@ run_menu(){
 
 run_app() {
     $(zenity --info --text="$app_info" --height=150 --width=250)
-    check_update
+    #check_update
     run_menu "${items_main_menu[@]}"
 }
 

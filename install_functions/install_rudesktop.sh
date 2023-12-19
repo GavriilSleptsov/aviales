@@ -1,15 +1,15 @@
-install_app_telegram() {
-	file_path="/usr/share/applications/telegram.desktop"
+install_app_rudesktop() {
+	file_path="/usr/share/applications/rudesktop.desktop"
 	if [ -e "$file_path" ]; then
 		$(zenity --info --text="Пакет уже установлен!" --height=100 --width=160)
 		check_cancel
 	else 
 		passwd=$(zenity --password)
 		check_cancel
-		file="/home/$USER/Desktop/telegram.deb"
+		file="/home/$USER/Desktop/rudesktop.deb"
 		zenity --auto-close &
 		(
-			wget http://easyastra.ru/store/telegram.deb -P /home/$USER/Desktop/
+			wget https://slepsov.ru/aitekinfo/rudesktop.deb -P /home/$USER/Desktop/
 			# Проверка кода завершения wget
 			if [ $? -eq 0 ]; then
 				zenity --info --title="Успех" --text="Файл успешно загружен!"
