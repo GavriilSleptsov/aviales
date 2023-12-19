@@ -150,8 +150,9 @@ source $path_install_functions/download_one_c.sh
 
 source $path_install_functions/domen.sh
 
-
 source $path_install_functions/install_naps.sh
+
+source $path_install_functions/netmgr_network.sh
 ###########################################################################################
 ############################## КОНЕЦ БЛОКА event_item_menu ################################
 ###########################################################################################
