@@ -6,9 +6,25 @@ connect_network_folders () {
         --add-password="Пароль")
     
     check_cancel
+	echo "$passwd" | sudo -S mkdir -p /media/aviales/E-mail
+	echo "$passwd" | sudo -S mkdir -p "/media/aviales/Архив\ баз\ 1С"
+	echo "$passwd" | sudo -S mkdir -p /media/aviales/Видеоматериалы\ и\ презентации
+	echo "$passwd" | sudo -S mkdir -p /media/aviales/Входящая\ и\ исходящая\ корреспонденция
+	echo "$passwd" | sudo -S mkdir -p /media/aviales/Государственные\ торги
+	echo "$passwd" | sudo -S mkdir -p /media/aviales/Должностные\ инструкции
+	echo "$passwd" | sudo -S mkdir -p /media/aviales/Картографические\ материалы
+	echo "$passwd" | sudo -S mkdir -p /media/aviales/Лесные\ пожары
 	echo "$passwd" | sudo -S mkdir -p /media/aviales/Общие\ документы
+	echo "$passwd" | sudo -S mkdir -p /media/aviales/Оперативная\ информация
+	echo "$passwd" | sudo -S mkdir -p /media/aviales/Паспорта\ автотехники
+	echo "$passwd" | sudo -S mkdir -p /media/aviales/Программное\ обеспечение
+	echo "$passwd" | sudo -S mkdir -p /media/aviales/Система\ управления\ охраной\ труда
+	echo "$passwd" | sudo -S mkdir -p /media/aviales/Счетная\ палата
+	echo "$passwd" | sudo -S mkdir -p /media/aviales/Табеля\ РДС
+	echo "$passwd" | sudo -S mkdir -p /media/aviales/Учебный\ центр
+	echo "$passwd" | sudo -S mkdir -p /media/aviales/Учредительная\ и\ руководящая\ документация
+	echo "$passwd" | sudo -S mkdir -p /media/aviales/Якутское\ АО
     network_folder_text=$(curl "https://raw.githubusercontent.com/GavriilSleptsov/aviales/main/text_for_zenity/network_folder")
-	
     echo "$passwd" | sudo -S sh -c 'cat <<EOL >> /etc/fstab
 #
 # -- E-mail --
