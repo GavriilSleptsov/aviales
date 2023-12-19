@@ -1,4 +1,4 @@
-download_1с_2760() {
+download_с_2760() {
 	passwd=$(zenity --password)
 	check_cancel
 	zenity --auto-close &
@@ -14,7 +14,7 @@ download_1с_2760() {
 		) | zenity --progress --pulsate --title "Загрузка файла" --text="Подождите, идет загрузка..." --auto-close
 }
 
-download_1с_1851() {
+download_с_1851() {
 	passwd=$(zenity --password)
 	check_cancel
 	zenity --auto-close &
@@ -30,7 +30,7 @@ download_1с_1851() {
 		) | zenity --progress --pulsate --title "Загрузка файла" --text="Подождите, идет загрузка..." --auto-close
 }
 
-download_1с_2256() {
+download_с_2256() {
 	passwd=$(zenity --password)
 	check_cancel
 	zenity --auto-close &
@@ -46,7 +46,7 @@ download_1с_2256() {
 		) | zenity --progress --pulsate --title "Загрузка файла" --text="Подождите, идет загрузка..." --auto-close
 }
 
-download_1с_2283() {
+download_с_2283() {
 	passwd=$(zenity --password)
 	check_cancel
 	zenity --auto-close &
