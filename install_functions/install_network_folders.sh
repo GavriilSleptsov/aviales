@@ -66,5 +66,5 @@ connect_network_folders () {
 #//192.168.0.202/Якутское\040АО /media/aviales/Якутское\040\АО cifs username=tornado,password=torsys,iocharset=utf8,nofail,_netdev,file_mode=0777,dir_mode=0777 0 0
 EOL'
 
-    zenity --info --text="$network_folder_text" --height=200 --width=400
+    zenity --info --text="$network_folder_text" --height=200 --width=450
 }
