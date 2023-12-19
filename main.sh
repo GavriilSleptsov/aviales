@@ -51,6 +51,8 @@ source $path_items/item_menu_information_aldpro.sh
 ##########----------"Действия с Сетевыми папками"----------##########
 source $path_items/item_menu_information_network_folders.sh
 
+source $path_items/item_menu_information_crypto.sh
+
 ####################################################################################
 ############################## КОНЕЦ БЛОКА item_menu ###############################
 ####################################################################################
@@ -102,6 +104,8 @@ source $path_events/event_item_menu_information_pomogator.sh
 
 source $path_events/event_item_menu_information_network_folders.sh
 
+source $path_events/event_item_menu_information_crypto.sh
+
 source $path_install_functions/install_telegram.sh
 
 source $path_install_functions/install_remmina.sh
@@ -131,6 +135,8 @@ source $path_install_functions/install_karma.sh
 source $path_install_functions/install_saby_plugin.sh
 
 source $path_install_functions/install_scr.sh
+
+source $path_install_functions/crypto.sh
 ###########################################################################################
 ############################## КОНЕЦ БЛОКА event_item_menu ################################
 ###########################################################################################
@@ -182,7 +188,7 @@ remove_app(){
     check_cancel
     echo $passwd | sudo -S apt remove "$1" -y
 	if [ $? -eq 0 ]; then
-		zenity --info --title="Успех" --text="Файл успешно удален!"
+		zenity --info --title="Успех" --height=100 --width=160 --text="Файл успешно удален!"
 	else
 		zenity --error --title="Ошибка" --text="Ошибка при удалении файла!."
 	exit 1
