@@ -8,7 +8,8 @@ export item_menu_install_yandex="Установить Yandex-Browser-Stable (130
 export item_menu_install_remina="Установить Remmina (2.8Mb)" 
 export item_menu_install_vipnet="Установить Vipnet Client 4.15.0 GUI (41.86Mb)" 
 export item_menu_install_rudesktop="Установить RuDesktop (8.74Mb)" 
-export item_menu_install_karma="Установить KARMA (8.74Mb)" 
+export item_menu_install_karma="Установить KARMA 56.0.219 (2Mb)" 
+export item_menu_install_saby_plugin="Установить Saby Plugin(2Mb)" 
 export item_menu_install_apps=( 
 "\"$item_menu_install_myoffice\""    
 "\"$item_menu_install_telegram\""  
@@ -19,6 +20,7 @@ export item_menu_install_apps=(
 "\"$item_menu_install_vipnet\""
 "\"$item_menu_install_rudesktop\""
 "\"$item_menu_install_karma\""
+"\"$item_menu_install_saby_plugin\""
 "\"$exit_menu\"" 
 "\"$exit_app\"")
  
