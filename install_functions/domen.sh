@@ -3,7 +3,7 @@ domen_connect() {
 	check_cancel
 	zenity --auto-close &
 	(
-		echo $passwd | sudo apt install astra-winbind -y
+		echo $passwd | sudo -S apt install astra-winbind -y
 		# Проверка кода завершения wget
 		if [ $? -eq 0 ]; then
 			zenity --info --title="Успех" --text="Файл успешно загружен!"
@@ -26,5 +26,5 @@ domen_connect() {
 		else
 			zenity --error --title="Ошибка" --text="Ошибка при установке пакета!."
 		fi
-	) | zenity --progress --pulsate --title "Загрузка" --text="Пытаюсь присоединиться в домен..." --auto-close
+	) | zenity --progress --pulsate --title --height=130 --width=160 "Загрузка" --text="Пытаюсь присоединиться в домен..." --auto-close
 }
