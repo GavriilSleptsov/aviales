@@ -1,12 +1,12 @@
 install_app_saby_plugin() {
-	file_path="/usr/share/applications/rudesktop123.desktop"
+	file_path="/usr/share/applications/Sbis3Plugin.desktop"
 	if [ -e "$file_path" ]; then
 		$(zenity --info --text="Пакет уже установлен!" --height=100 --width=160)
 		check_cancel
 	else 
 		passwd=$(zenity --password)
 		check_cancel
-		#file="/home/$USER/Desktop/rudesktop.deb"
+		file="/home/$USER/Desktop/sabyapps-setup"
 		zenity --auto-close &
 		(
 			wget https://slepsov.ru/aitekinfo/sabyapps-setup -P /home/$USER/Desktop/
@@ -31,8 +31,8 @@ install_app_saby_plugin() {
 			zenity --info --title="Успех" --text="Пакет успешно установлен!"
 		) | zenity --progress --pulsate --title "Установка пакета" --text="Подождите, идет установка..." --auto-close
 		# Проверка наличия файла перед удалением
-		#if [ -e "$file" ]; then
-		#	rm "$file"
-		#fi
+		if [ -e "$file" ]; then
+			rm "$file"
+		fi
 	fi
 }
