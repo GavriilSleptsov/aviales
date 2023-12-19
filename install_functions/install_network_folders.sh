@@ -21,6 +21,9 @@
 #19. Учредительная и руководящая документация
 #20. Якутское АО
 
+# Фиксированные данные для монтирования
+mount_credentials="cifs username=tornado,password=torsys,iocharset=utf8,nofail,_netdev,file_mode=0777,dir_mode=0777 0 0"
+
 connect_network_folders () {
 	passwd=$(zenity --password)
 	echo $passwd | sudo -S cp /etc/fstab /etc/fstab.backup
@@ -28,9 +31,6 @@ connect_network_folders () {
 	
 		# Имя монтируемой папки
 		folder_mount_name=$1
-		
-		# Данные для монтирования
-		mount_credentials="cifs username=tornado,password=torsys,iocharset=utf8,file_mode=0777,dir_mode=0777 0 0"
 	
 		# Строка, которую вы ищете в /etc/fstab
 		search_string="//192.168.0.2/$folder_mount_name /media/aviales/$folder_mount_name $mount_credentials"
@@ -62,9 +62,9 @@ connect_network_folders () {
 	 check_checkbox() {
 		check_checkbox_number=$1
 		if [ "$network_folder1" == "TRUE" ]; then
-			echo $passwd | sudo -S sed -i 's|#//192.168.0.2/Общие\040документы/ /media/aviales/Общие\040документы/ cifs username=tornado,password=torsys,iocharset=utf8,file_mode=0777,dir_mode=0777 0 0|//192.168.0.2/Общие\040документы/ /media/aviales/Общие\040документы/ cifs username=tornado,password=torsys,iocharset=utf8,file_mode=0777,dir_mode=0777 0 0|g' /etc/fstab
+			echo $passwd | sudo -S sed -i 's|#//192.168.0.2/Общие\040документы/ /media/aviales/Общие\040документы/ $mount_credentials|//192.168.0.2/Общие\040документы/ /media/aviales/Общие\040документы/ $mount_credentials|g' /etc/fstab
 		else
-			echo $passwd | sudo -S sed -i 's|//192.168.0.2/Общие\040документы/ /media/aviales/Общие\040документы/ cifs username=tornado,password=torsys,iocharset=utf8,file_mode=0777,dir_mode=0777 0 0|#//192.168.0.2/Общие\040документы/ /media/aviales/Общие\040документы/ cifs username=tornado,password=torsys,iocharset=utf8,file_mode=0777,dir_mode=0777 0 0|g' /etc/fstab
+			echo $passwd | sudo -S sed -i 's|//192.168.0.2/Общие\040документы/ /media/aviales/Общие\040документы/ $mount_credentials|#//192.168.0.2/Общие\040документы/ /media/aviales/Общие\040документы/ $mount_credentials|g' /etc/fstab
 		fi
 	 }
 }
