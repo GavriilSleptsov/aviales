@@ -36,7 +36,9 @@ install_cades() {
 	zenity --auto-close &
 	(
 		# Установка пакета с использованием sudo и передачей пароля через stdin
-		echo $passwd | sudo -S dpkg -i /home/$USER/Desktop/cprocsp-pki-cades-64_2.0.14892-1_amd64.deb /home/$USER/Desktop/cprocsp-pki-phpcades_2.0.14892-1_all.deb /home/$USER/Desktop/cprocsp-pki-plugin-64_2.0.14892-1_amd64.deb -y
+		echo $passwd | sudo -S dpkg -i /home/$USER/Desktop/cprocsp-pki-cades-64_2.0.14892-1_amd64.deb 
+		echo $passwd | sudo -S dpkg -i /home/$USER/Desktop/cprocsp-pki-phpcades_2.0.14892-1_all.deb 
+		echo $passwd | sudo -S dpkg -i /home/$USER/Desktop/cprocsp-pki-plugin-64_2.0.14892-1_amd64.deb
 		# Получение кода завершения установки
 		exit_code=$?
 		# Проверка кода завершения и отображение соответствующего сообщения
