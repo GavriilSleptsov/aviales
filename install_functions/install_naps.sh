@@ -1,5 +1,5 @@
 install_app_naps() {
-	file_path="/susr/share/applications/rudesktop.desktop"
+	file_path="/usr/share/applications/naps2.desktop"
 	if [ -e "$file_path" ]; then
 		$(zenity --info --text="Пакет уже установлен!" --height=100 --width=160)
 		check_cancel
