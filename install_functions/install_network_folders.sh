@@ -7,7 +7,7 @@ connect_network_folders () {
     
     check_cancel
 	echo "$passwd" | sudo -S mkdir -p /media/aviales/E-mail
-	echo "$passwd" | sudo -S mkdir -p "/media/aviales/Архив\ баз\ 1С"
+	echo "$passwd" | sudo -S mkdir -p "/media/aviales/Архив баз 1С"
 	echo "$passwd" | sudo -S mkdir -p /media/aviales/Видеоматериалы\ и\ презентации
 	echo "$passwd" | sudo -S mkdir -p /media/aviales/Входящая\ и\ исходящая\ корреспонденция
 	echo "$passwd" | sudo -S mkdir -p /media/aviales/Государственные\ торги
