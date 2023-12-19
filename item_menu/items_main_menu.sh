@@ -20,8 +20,8 @@ if getent group | grep -qw 'astra-admin' && id -nG | grep -qw 'astra-admin'; the
 	"$item_menu_information_freeipa" 
 	"$item_menu_information_network_folders"
 	"$item_menu_information_cryptopro"
-	"$item_menu_information_pomogator" 
 	"$item_menu_information_one_c"
+	"$item_menu_information_pomogator" 
 	"$exit_app")
 	
 else

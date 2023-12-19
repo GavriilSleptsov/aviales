@@ -51,7 +51,7 @@ download_one_c_four() {
 	check_cancel
 	zenity --auto-close &
 		(
-		wget https://slepsov.ru/aitekinfo/1C/tthin.client_8_3_22_2283.deb64.tar.gz -P /home/$USER/Desktop/
+		wget https://slepsov.ru/aitekinfo/1C/thin.client_8_3_22_2283.deb64.tar.gz -P /home/$USER/Desktop/
 		# Проверка кода завершения wget
 		if [ $? -eq 0 ]; then
 			zenity --info --title="Успех" --text="Файл успешно загружен!"
