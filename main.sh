@@ -282,13 +282,19 @@ repo_frozen1_7_3(){
     echo $passwd | sudo -S apt update
     $(zenity --info --text="Репозитории frozen 1.7.3 успешно добавлены. Можно проверить по пути /etc/apt/sources.list" --height=200 --width=300)
 }
-repo_info(){
-    $(zenity --info --text=" Описание веток репозиториев
- \n✔️ Основной репозиторий (main) - сертифициронный установочный диск
- \n✔️ Оперативные обновления (update) - обновления для main репозитория 
- \n✔️ Базовый репозиторий (base) - включает в себя репозиторий main , update и компаненты разработчика (dev) с обновлениями (dev-update)
- \n✔️ Расширенный репозиторий (extended) - Дополнительное ПО" --height=500 --width=500)
+
+repo_frozen1_7_5(){
+    passwd=$(zenity --forms --title="Пароль для администратора" \
+        --text="Введите пароль администратора" \
+        --add-password="Пароль")    
+    check_cancel
+	echo $passwd | sudo -S bash -c "echo -e '#---------- Репозитории frozen 1.7.5 ----------' >> /etc/apt/sources.list"
+    echo $passwd | sudo -S bash -c "echo -e 'deb http://dl.astralinux.ru/astra/frozen/1.7_x86-64/1.7.5/repository-base/          1.7_x86-64 main contrib non-free' >> /etc/apt/sources.list"
+    echo $passwd | sudo -S bash -c "echo -e 'deb http://dl.astralinux.ru/astra/frozen/1.7_x86-64/1.7.5/repository-extended/      1.7_x86-64 main contrib non-free ' >> /etc/apt/sources.list"
+    echo $passwd | sudo -S apt update
+    $(zenity --info --text="Репозитории frozen 1.7.3 успешно добавлены. Можно проверить по пути /etc/apt/sources.list" --height=200 --width=300)
 }
+
 #-------------------------------------pomogator settings function------------------------------------#
 pomogator_update(){
     check_cancel
