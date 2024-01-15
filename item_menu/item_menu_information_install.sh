@@ -13,6 +13,7 @@ export item_menu_install_saby_plugin="Установить Saby Plugin"
 export item_menu_install_kontur_plugin="Установить Контур.Плагин (Переход на сайт)"
 export item_menu_install_scr="Установить SimpleScreenRecorder"  
 export item_menu_install_naps="Установить NAPS32 (16.29Mb)" 
+export item_menu_install_test="Установить TEST" 
 export item_menu_install_apps=( 
 "\"$item_menu_install_myoffice\""    
 "\"$item_menu_install_telegram\""  
@@ -27,6 +28,7 @@ export item_menu_install_apps=(
 "\"$item_menu_install_kontur_plugin\""
 "\"$item_menu_install_scr\""
 "\"$item_menu_install_naps\""
+"\"$item_menu_install_test\""
 "\"$exit_menu\"" 
 "\"$exit_app\"")
  
