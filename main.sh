@@ -114,43 +114,15 @@ source $path_events/event_item_menu_information_one_c.sh
 
 source $path_events/event_item_menu_information_domen.sh
 
-source $path_install_functions/install_telegram.sh
-
-source $path_install_functions/install_remmina.sh
-
-source $path_install_functions/install_myoffice.sh
-
-source $path_install_functions/install_crypto1290.sh
-
-source $path_install_functions/install_whatsapp.sh
-
-source $path_install_functions/install_wps.sh
-
-source $path_install_functions/install_yandex.sh
-
-source $path_install_functions/install_armgs.sh
-
-source $path_install_functions/install_freeipa.sh
-
-source $path_install_functions/install_vipnet.sh
+source $path_install_functions/install_apps.sh
 
 source $path_install_functions/install_network_folders.sh
 
-source $path_install_functions/install_rudesktop.sh
-
-source $path_install_functions/install_karma.sh
-
-source $path_install_functions/install_saby_plugin.sh
-
-source $path_install_functions/install_scr.sh
-
 source $path_install_functions/crypto.sh
-
-source $path_install_functions/download_one_c.sh
 
 source $path_install_functions/domen.sh
 
-source $path_install_functions/install_naps.sh
+
 
 ###########################################################################################
 ############################## КОНЕЦ БЛОКА event_item_menu ################################
