@@ -292,7 +292,7 @@ repo_frozen1_7_5(){
     echo $passwd | sudo -S bash -c "echo -e 'deb http://dl.astralinux.ru/astra/frozen/1.7_x86-64/1.7.5/repository-base/          1.7_x86-64 main contrib non-free' >> /etc/apt/sources.list"
     echo $passwd | sudo -S bash -c "echo -e 'deb http://dl.astralinux.ru/astra/frozen/1.7_x86-64/1.7.5/repository-extended/      1.7_x86-64 main contrib non-free ' >> /etc/apt/sources.list"
     echo $passwd | sudo -S apt update
-    $(zenity --info --text="Репозитории frozen 1.7.3 успешно добавлены. Можно проверить по пути /etc/apt/sources.list" --height=200 --width=300)
+    $(zenity --info --text="Репозитории frozen 1.7.5 успешно добавлены. Можно проверить по пути /etc/apt/sources.list" --height=200 --width=300)
 }
 
 #-------------------------------------pomogator settings function------------------------------------#
