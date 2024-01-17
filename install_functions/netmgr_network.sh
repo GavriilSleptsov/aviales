@@ -1,23 +1,6 @@
 #!/bin/bash
 
-
-add_network_config() {
-    computer_ip=$(whiptail --inputbox "Введите IP адрес ПК:" 10 60 192.168.0. 3>&1 1>&2 2>&3)
-    subnet_mask=$(whiptail --inputbox "Введите маску подсети (в виде /24):" 10 60 24 3>&1 1>&2 2>&3)
-    gateway_ip=$(whiptail --inputbox "Введите шлюз:" 10 60 192.168.0.1 3>&1 1>&2 2>&3)
-    dns1_ip=$(whiptail --inputbox "Введите IP DNS сервера:" 10 60 192.168.0.201 3>&1 1>&2 2>&3)
-    search_domain_name=$(whiptail --inputbox "Введите поисковый домен:" 10 60 aviales.local 3>&1 1>&2 2>&3)
-    if (whiptail --yesno "IP адрес:    $computer_ip\nМаска подсети:    $subnet_mask\nШлюз:    $gateway_ip\nDNS:    $dns1_ip\nПоисковый домен:    $search_domain_name" --no-button "No" --yes-button "Yes" 15 60 3>&1 1>&2 2>&3 ); then
-  whiptail --title "MESSAGE" --msgbox "Process completed successfully." 8 78;
-  else whiptail --title "MESSAGE" --msgbox "Cancelling" 8 78
-  exit 1;
-fi
-}
-
 add_network() {
-	#стартуем сеть
-	nmcli -wait 1 device conn eth0 
-
 	имя активного соединения
 	con_name=$(nmcli --fields NAME -t connection show --active)
 
@@ -33,3 +16,16 @@ add_network() {
 	nmcli connection up "$con_name"
 	sleep 5
 }
+
+ form_data=$(zenity --forms --title="Введите данные" --text="Введите данные:" \
+            --add-entry="Введите IP адрес ПК" \
+            --add-entry="Введите маску подсети в виде: 24" \
+            --add-entry="Введите IP DNS сервера" \
+			--add-entry="Введите IP шлюза по умполчанию" \
+			--add-entry="Введите поисковый домен" \ 
+            # Разбиение строки с данными на отдельные переменные
+            ip_address=$(echo "$form_data" | awk -F '|' '{print $1}')
+            subnet_mask=$(echo "$form_data" | awk -F '|' '{print $2}')
+            dns_server=$(echo "$form_data" | awk -F '|' '{print $3}')
+			gateway=$(echo "$form_data" | awk -F '|' '{print $4}')
+			search_domain=$(echo "$form_data" | awk -F '|' '{print $5}')
