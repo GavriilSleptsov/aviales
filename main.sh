@@ -57,6 +57,8 @@ source $path_items/item_menu_information_one_c.sh
 
 source $path_items/item_menu_information_domen.sh
 
+source $path_items/item_menu_information_netmgr.sh
+
 ####################################################################################
 ############################## КОНЕЦ БЛОКА item_menu ###############################
 ####################################################################################
@@ -113,6 +115,8 @@ source $path_events/event_item_menu_information_cryptopro.sh
 source $path_events/event_item_menu_information_one_c.sh
 
 source $path_events/event_item_menu_information_domen.sh
+
+source $path_events/event_item_menu_information_netmgr.sh
 
 source $path_install_functions/install_apps.sh
 
