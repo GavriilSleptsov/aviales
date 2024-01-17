@@ -15,13 +15,13 @@ add_network() {
 	#nmcli connection down "$con_name"
 	#nmcli connection up "$con_name"
 	#sleep 5
-	 form_data=$(zenity --forms --title="Введите данные" --text="Введите данные:" \
+	form_data=$(zenity --forms --title="Введите данные" --text="Введите данные:" \
             --add-entry="Введите IP адрес ПК" \
             --add-entry="Введите маску подсети в виде: 24" \
             --add-entry="Введите IP DNS сервера" \
 			--add-entry="Введите IP шлюза по умполчанию" \
-			--add-entry="Введите поисковый домен" \ 
-            # Разбиение строки с данными на отдельные переменные
+			--add-entry="Введите поисковый домен"
+            #Разбиение строки с данными на отдельные переменные
             ip_address=$(echo "$form_data" | awk -F '|' '{print $1}')
             subnet_mask=$(echo "$form_data" | awk -F '|' '{print $2}')
             dns_server=$(echo "$form_data" | awk -F '|' '{print $3}')
