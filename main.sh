@@ -122,6 +122,7 @@ source $path_install_functions/crypto.sh
 
 source $path_install_functions/domen.sh
 
+source $path_install_functions/netmgr_network.sh
 
 
 ###########################################################################################
