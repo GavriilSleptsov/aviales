@@ -1,16 +1,16 @@
 #!/bin/bash
-validate_ip_or_dns() {
+validate_ip() {
 	local ip=$1
 	local regex='^((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$'
 	if [[ ! $ip =~ $regex ]]; then
-		zenity --error --text="Ошибка: Неверный формат IP-адреса или допустимые значения."
-		exit 1
+		zenity --error --width=120 --height=100 --text="Ошибка: Неверный формат IP-адреса или допустимые значения." 
+		run_menu "${items_main_menu[@]}"
 	fi
 }
 
 
 add_network() {
-	form_data=$(zenity --forms --title="Введите данные" --text="Введите данные:" \
+	form_data=$(zenity --forms --title="Введите данные" --text="Введите данные:"\
 		--add-entry="Введите IP адрес ПК" \
 		--add-entry="Введите маску подсети в виде: 24" \
 		--add-entry="Введите IP DNS сервера" \
@@ -26,12 +26,16 @@ add_network() {
 		gateway=$(echo "$form_data" | awk -F '|' '{print $4}')
 		search_domain=$(echo "$form_data" | awk -F '|' '{print $5}')
 
-	validate_ip_or_dns "$ip_address"
-	validate_ip_or_dns "$dns_server"
+	validate_ip "$ip_address"
+	validate_ip "$dns_server"
 	
 	con_name=$(nmcli --fields NAME -t connection show --active)
 
 	if [ -z "$con_name" ] ; then echo "Нет активных соединений" && exit 0;
+	fi
+	
+	if [ -z "$search_domain" ]; then
+		search_domain=""
 	fi
 
 	nmcli connection modify "$con_name" connection.autoconnect yes ipv4.method manual \
