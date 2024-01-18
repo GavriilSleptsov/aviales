@@ -25,7 +25,16 @@ add_network() {
 		gateway=$(echo "$form_data" | awk -F '|' '{print $4}')
 		search_domain=$(echo "$form_data" | awk -F '|' '{print $5}')
 		
-		validate_ip "$ip_address"
+	if [[ $? -eq 1 ]]; then
+    run_menu "${items_main_menu[@]}"
+    fi
+		
+		
+	#check_cancel
+	#validate_ip "$ip_address"
+		
+		
+		
 		
 	con_name=$(nmcli --fields NAME -t connection show --active)
 
