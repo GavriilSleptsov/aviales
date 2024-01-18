@@ -35,7 +35,7 @@ add_network() {
 	fi
 	
 	if [ -z "$search_domain" ]; then
-		search_domain=""
+	search_domain=""
 	fi
 
 	nmcli connection modify "$con_name" connection.autoconnect yes ipv4.method manual \
