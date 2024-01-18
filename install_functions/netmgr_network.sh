@@ -1,7 +1,5 @@
 #!/bin/bash
-
-
-validate_ip() {
+validate_ip_or_dns() {
 	local ip=$1
 	local regex='^((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$'
 	if [[ ! $ip =~ $regex ]]; then
@@ -18,24 +16,19 @@ add_network() {
 		--add-entry="Введите IP DNS сервера" \
 		--add-entry="Введите IP шлюза по умполчанию" \
 		--add-entry="Введите поисковый домен")
+		
+		check_cancel
+		
 		#Разбиение строки с данными на отдельные переменные
 		ip_address=$(echo "$form_data" | awk -F '|' '{print $1}')
 		subnet_mask=$(echo "$form_data" | awk -F '|' '{print $2}')
 		dns_server=$(echo "$form_data" | awk -F '|' '{print $3}')
 		gateway=$(echo "$form_data" | awk -F '|' '{print $4}')
 		search_domain=$(echo "$form_data" | awk -F '|' '{print $5}')
-		
-	if [[ $? -eq 1 ]]; then
-    run_menu "${items_main_menu[@]}"
-    fi
-		
-		
-	#check_cancel
-	#validate_ip "$ip_address"
-		
-		
-		
-		
+
+	validate_ip_or_dns "$ip_address"
+	validate_ip_or_dns "$dns_server"
+	
 	con_name=$(nmcli --fields NAME -t connection show --active)
 
 	if [ -z "$con_name" ] ; then echo "Нет активных соединений" && exit 0;
