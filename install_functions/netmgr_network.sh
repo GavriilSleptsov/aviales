@@ -44,6 +44,10 @@ add_network() {
 	declare -a dns_options
 	declare -a ip_options
 	
+	if [ -z "$ip_address" ] && [ -z "$subnet_mask" ] && [ -z "$dns_server" ] && [ -z "$gateway" ] && [ -z "$search_domain" ]; then
+		run_menu "${items_main_menu[@]}"
+	fi
+	
 	if [ -n "$dns_server" ]; then
 		validate_ip "$dns_server"
 		dns_options+=("ipv4.dns $dns_server")
