@@ -8,6 +8,19 @@ validate_ip() {
 	fi
 }
 
+validate_subnet_mask() {
+	local subnet_mask="$1"
+	if ! [[ "$subnet_mask" =~ ^[0-9]+$ ]]; then
+		zenity --error --width=120 --height=100 --text="Ошибка: Маска подсети должна быть числом от 0 до 32." 
+		run_menu "${items_main_menu[@]}"
+	fi
+
+	if ((subnet_mask < 0 || subnet_mask > 32)); then
+		zenity --error --width=120 --height=100 --text="Ошибка: Недопустимый префикс маски подсети. Префикс должен быть от 0 до 32." 
+		run_menu "${items_main_menu[@]}"
+	fi
+}
+
 
 add_network() {
 	form_data=$(zenity --forms --title="Введите данные" --text="Введите данные:"\
@@ -25,27 +38,39 @@ add_network() {
 		dns_server=$(echo "$form_data" | awk -F '|' '{print $3}')
 		gateway=$(echo "$form_data" | awk -F '|' '{print $4}')
 		search_domain=$(echo "$form_data" | awk -F '|' '{print $5}')
-
-	validate_ip "$ip_address"
-	validate_ip "$dns_server"
 	
 	con_name=$(nmcli --fields NAME -t connection show --active)
-
-	if [ -z "$con_name" ] ; then echo "Нет активных соединений" && exit 0;
+	
+	declare -a dns_options
+	declare -a ip_options
+	
+	if [ -n "$dns_server" ]; then
+		validate_ip "$dns_server"
+		dns_options+=("ipv4.dns $dns_server")
 	fi
 	
-	if [ -z "$search_domain" ]; then
-	search_domain=""
+	if [ -n "$search_domain" ]; then
+		dns_options+=("ipv4.dns-search $search_domain")
+	fi
+	
+	if [ -n "$ip_address" ]; then
+		validate_ip "$ip_address"
+		validate_subnet_mask "$subnet_mask"
+		ip_options+=("ipv4.addresses $ip_address/$subnet_mask")
+	fi
+	
+	if [ -n "$gateway" ]; then 
+		validate_ip "$gateway"
+		ip_options+=("ipv4.gateway $gateway")
 	fi
 
 	nmcli connection modify "$con_name" connection.autoconnect yes ipv4.method manual \
-	ipv4.dns $dns_server \
-	ipv4.dns-search $search_domain \
-	ipv4.addresses $ip_address/$subnet_mask \
-	ipv4.gateway $gateway
-
+	${dns_options[@]} \
+	${ip_options[@]}
+	
 	nmcli connection down "$con_name"
 	nmcli connection up "$con_name"
 	sleep 5
 }
+
 
