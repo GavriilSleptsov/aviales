@@ -53,8 +53,8 @@ add_network() {
 		dns_options+=("ipv4.dns $dns_server")
 	fi
 	
-	if [ -n "$search_domain" ]; then
-		dns_options+=("ipv4.dns-search $search_domain")
+	if [ -z "$search_domain" ]; then
+		dns_options+=("ipv4.dns-search """)
 	fi
 	
 	if [ -n "$ip_address" ]; then
