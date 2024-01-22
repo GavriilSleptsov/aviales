@@ -1,15 +1,5 @@
 #!/bin/bash
-
-create_folder_for_network_folders () {
-	if [ -d /etc/skel/Desktop/Сетевые\ папки ]; then
-		echo "Папка уже существует. Ничего не нужно делать."
-	else
-		echo $passwd | sudo mkdir /etc/skel/Desktop/Сетевые\ папки
-	fi
-}
-
 connect_network_folders () {
-	passwd=$(zenity --password)
 	# Показываем диалоговое окно с чекбоксами
 	selected_options=$(zenity --list --checklist \
 		--title="Выберите сетевые папки" \
@@ -21,8 +11,14 @@ connect_network_folders () {
 		--separator=":" \
 		--width=500 --height=400);
 
-	# Проверяем, были ли выбраны какие-либо опции
+	# Проверяем, были ли выбраны какие-либо шары
 	if [ -n "$selected_options" ]; then
+		passwd=$(zenity --password)
+		if [ -d /etc/skel/Desktop/Сетевые\ папки ]; then
+			echo "Папка уже существует. Ничего не нужно делать."
+		else
+			echo $passwd | sudo mkdir /etc/skel/Desktop/Сетевые\ папки
+		fi
 		credentials_for_netfolders="cifs,user=admin,password=P@ssw0rd,iocharset=utf8,dir_mode=0777,file_mode=0777,_netdev,nofail 0 0"
 		create_folder_for_network_folders
 		IFS=':' read -ra options_array <<< "$selected_options"
