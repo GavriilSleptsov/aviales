@@ -4,13 +4,12 @@ create_folder_for_network_folders () {
 	if [ -d /etc/skel/Desktop/Сетевые\ папки ]; then
 		echo "Папка уже существует. Ничего не нужно делать."
 	else
-		mkdir /etc/skel/Desktop/Сетевые\ папки
+		echo $passwd | sudo mkdir /etc/skel/Desktop/Сетевые\ папки
 	fi
 }
 
 connect_network_folders () {
-	#!/bin/bash
-
+	passwd=$(zenity --password)
 	# Показываем диалоговое окно с чекбоксами
 	selected_options=$(zenity --list --checklist \
 		--title="Выберите сетевые папки" \
@@ -30,8 +29,8 @@ connect_network_folders () {
 		for option in "${options_array[@]}"; do
 			case $option in
 				"sharetest")
-					mkdir -p /media/yakutia/sharetest
-					echo "//192.168.0.200/sharetest /media/yakutia/sharetest $credentials_for_netfolders" >> /etc/fstab
+					echo $passwd | sudo mkdir -p /media/yakutia/sharetest
+					echo $passwd | sudo echo "//192.168.0.200/sharetest /media/yakutia/sharetest $credentials_for_netfolders" >> /etc/fstab
 					;;
 				"folders")
 					echo "Выбрана Опция 2"
