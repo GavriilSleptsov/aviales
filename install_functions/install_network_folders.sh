@@ -17,7 +17,7 @@ connect_network_folders () {
 		if [ -d "/etc/skel/Desktop/Сетевые\ папки" ]; then
 			echo "Папка уже существует. Ничего не нужно делать."
 		else
-			echo $passwd | sudo mkdir /etc/skel/Desktop/Сетевые\ папки
+			echo $passwd | sudo -S mkdir /etc/skel/Desktop/Сетевые\ папки
 		fi
 		credentials_for_netfolders="cifs,user=admin,password=P@ssw0rd,iocharset=utf8,dir_mode=0777,file_mode=0777,_netdev,nofail 0 0"
 		IFS=':' read -ra options_array <<< "$selected_options"
