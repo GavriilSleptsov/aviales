@@ -25,9 +25,7 @@ connect_network_folders () {
 			case $option in
 				"sharetest")
 					echo $passwd | sudo mkdir -p /media/yakutia/sharetest
-					echo $passwd | sudo -S tee -a  "/etc/fstab" > /dev/null <<EOF
-//192.168.0.200/sharetest /media/yakutia/sharetest $credentials_for_netfolders
-EOF
+					echo $passwd | sudo -S echo "//192.168.0.200/sharetest /media/yakutia/sharetest $credentials_for_netfolders" >> /etc/fstab
 					;;
 				"folders")
 					echo "Выбрана Опция 2"
