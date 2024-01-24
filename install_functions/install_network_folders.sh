@@ -18,6 +18,7 @@ connect_network_folders () {
 			echo "Папка уже существует."
 		else
 			echo $passwd | sudo -S mkdir /etc/skel/Desktop/Сетевые\ папки
+			echo $passwd | sudo -S touch /etc/skel/Desktop/Сетевые\ папки/.directory
 			echo $passwd | sudo -S tee -a "/etc/skel/Desktop/Сетевые папки/.directory" <<EOF
 [Desktop Entry]
 Type=Directory
