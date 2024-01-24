@@ -23,7 +23,7 @@ connect_network_folders () {
 [Desktop Entry]
 Type=Directory
 NoDisplay=false
-Icon=prefences-system-network-sharing
+Icon=/usr/share/icons/fly-astra/32x32/apps/preferences-system-network-sharing.png
 Hidden=false
 EOF
 		fi
