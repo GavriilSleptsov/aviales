@@ -18,20 +18,23 @@
 download_one_c_first() {
     passwd=$(zenity --password)
     check_cancel
-    zenity --auto-close &
-        (
-        wget https://slepsov.ru/aitekinfo/1C/1c-enterprise83-thin-client_8.3.17-2760_amd64.deb -P /home/$USER/Desktop/ 2>&1 |
-        while read -r line; do
-            percent=$(echo "$line" | grep -o "[0-9]\+%" | tr -d '%')
-            echo "$percent"
-        done
-        ) | zenity --progress --pulsate --title "Загрузка файла" --text="Подождите, идет загрузка..." --auto-close
+
+    # Запускаем Zenity для отображения вывода wget
+    zenity --text-info --title "Загрузка файла" --text="Подождите, идет загрузка..." --auto-close &
+    zenity_pid=$!
+
+    # Загрузка файла с выводом
+    wget https://slepsov.ru/aitekinfo/1C/1c-enterprise83-thin-client_8.3.17-2760_amd64.deb -P /home/$USER/Desktop/ 2>&1 | zenity --text-info --width=800 --height=600 --title "Вывод загрузки файла"
+
+    # Ожидание завершения процесса Zenity
+    wait $zenity_pid
+
     # Проверка кода завершения wget
-    if [ ${PIPESTATUS[0]} -eq 0 ]; then
+    if [ $? -eq 0 ]; then
         zenity --info --title="Успех" --text="Файл успешно загружен!"
     else
         zenity --error --title="Ошибка" --text="Ошибка при загрузке файла."
-        exit 1
+        exit 12
     fi
 }
 
